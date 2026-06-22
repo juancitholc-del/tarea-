@@ -1,25 +1,40 @@
-﻿class Program
+﻿
+class Program
 {
-  
-    static double CalcularSueldo(double horas, double pagoHora)
+    
+    static double CalcularPromedio(double nota1, double nota2, double nota3)
     {
-        double sueldo = horas * pagoHora;
-        return sueldo;
+        double promedio = (nota1 + nota2 + nota3) / 3;
+        return promedio;
     }
 
     static void Main()
     {
-        Console.WriteLine("=== CÁLCULO DE SUELDO ===");
+        Console.WriteLine("=== PROMEDIO DE ESTUDIANTE ===");
 
-        Console.Write("Ingrese horas trabajadas: ");
-        double horas = Convert.ToDouble(Console.ReadLine());
+        Console.Write("Ingrese Nota 1: ");
+        double n1 = Convert.ToDouble(Console.ReadLine());
 
-        Console.Write("Ingrese pago por hora: ");
-        double pagoHora = Convert.ToDouble(Console.ReadLine());
-        double sueldoFinal = CalcularSueldo(horas, pagoHora);
+        Console.Write("Ingrese Nota 2: ");
+        double n2 = Convert.ToDouble(Console.ReadLine());
 
-        Console.WriteLine("El sueldo del trabajador es: S/ " + sueldoFinal);
+        Console.Write("Ingrese Nota 3: ");
+        double n3 = Convert.ToDouble(Console.ReadLine());
+
+        
+        double promedioFinal = CalcularPromedio(n1, n2, n3);
+
+        Console.WriteLine("Promedio final: " + promedioFinal);
+
+        
+        if (promedioFinal >= 11)
+        {
+            Console.WriteLine("Estado: APROBADO");
+        }
+        else
+        {
+            Console.WriteLine("Estado: DESAPROBADO");
+        }
         Console.ReadKey();
     }
-    
 }
